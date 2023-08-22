@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 body {
     margin: 0;
     padding: 0;
@@ -10,14 +17,15 @@ body {
     height: 100%;
     padding-left: 32px;
     padding-right: 32px;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
 .header {
     margin-top: 32px;
     width: 100%;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    height: fit-content;
 }
 
 .heading {
@@ -36,9 +44,14 @@ body {
 }
 
 .rim {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     gap: 10px;
+    -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     background: #F7935A;
     font-size: 14px;
@@ -59,40 +72,69 @@ body {
     padding: 0;
     margin: 0;
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
 }
 
 .content {
     width: 100%;
     height: 100%;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding-left: 64px;
     padding-right: 64px;
 }
 
 .counters {
+    -webkit-box-flex: 4;
+    -ms-flex: 4;
     flex: 4;
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     margin-top: 96px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
     align-items: stretch;
     gap: 10px;
 }
 
 .vertical {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
     flex: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
     align-items: start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
 }
 
 .vertical h3 {
     margin: 0;
+    -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     font-size: 14px;
     letter-spacing: 2px;
@@ -139,23 +181,37 @@ body {
 .wrapper {
     margin-top: 96px;
     width: 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
 .profile {
     width: 450px;
     min-height: 650px;
+    -o-object-fit: cover;
     object-fit: cover;
 }
 
 .candy {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
     flex: 1;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
     justify-content: end;
+    -ms-flex-item-align: baseline;
     align-self: baseline;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     height: 100%;
     display: none;
+    -webkit-box-flex: 100%;
+    -ms-flex-positive: 100%;
     flex-grow: 100%;
 }
 
@@ -184,21 +240,36 @@ body {
 }
 
 .link__cloud {
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
+    -webkit-animation: rotate normal infinite 60s linear;
     animation: rotate normal infinite 60s linear;
     fill: #F7935A;
 }
 
 .link__face,
 .link__arrow {
-    transform-origin: 50% 50%;
+    -webkit-transform-origin: 100px 100px;
+    -ms-transform-origin: 100px 100px;
+    transform-origin: 100px 100px;
+    -webkit-transition: -webkit-transform 0.15s cubic-bezier(0.32, 0, 0.67, 0);
+    transition: -webkit-transform 0.15s cubic-bezier(0.32, 0, 0.67, 0);
+    -o-transition: transform 0.15s cubic-bezier(0.32, 0, 0.67, 0);
     transition: transform 0.15s cubic-bezier(0.32, 0, 0.67, 0);
+    transition: transform 0.15s cubic-bezier(0.32, 0, 0.67, 0), -webkit-transform 0.15s cubic-bezier(0.32, 0, 0.67, 0);
 }
 
 .link:hover .link__face,
 .link:hover .link__arrow {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
     transform: scale(1.1);
+    -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+    transition: -webkit-transform 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+    -o-transition: transform 0.3s cubic-bezier(0.33, 1, 0.68, 1);
     transition: transform 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+    transition: transform 0.3s cubic-bezier(0.33, 1, 0.68, 1), -webkit-transform 0.3s cubic-bezier(0.33, 1, 0.68, 1);
 }
 
 .link__arrow {
@@ -206,28 +277,48 @@ body {
 }
 
 .link__text {
+    -webkit-animation: rotateReverse normal infinite 20s linear;
     animation: rotateReverse normal infinite 20s linear;
-    transform-origin: 50% 50%;
+    -webkit-transform-origin: 100px 100px;
+    -ms-transform-origin: 100px 100px;
+    transform-origin: 100px 100px;
 }
 
 .link:hover .link__text {
+    -webkit-animation-play-state: paused;
     animation-play-state: paused;
 }
 
 .link--alt {
-    font-size: 1.175rem;
+    font-size: 1.16rem;
     letter-spacing: 0.1rem;
     word-spacing: 0;
 }
 
+@-webkit-keyframes rotate {
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
 @keyframes rotate {
     to {
+        -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes rotateReverse {
+    to {
+        -webkit-transform: rotate(-360deg);
+        transform: rotate(-360deg);
     }
 }
 
 @keyframes rotateReverse {
     to {
+        -webkit-transform: rotate(-360deg);
         transform: rotate(-360deg);
     }
 }
@@ -275,6 +366,7 @@ body {
 
     .profile {
         width: 100%;
+        -o-object-fit: cover;
         object-fit: cover;
     }
 
@@ -307,6 +399,7 @@ body {
 
     .wrapper {
         margin-top: 20px;
+        -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     }
 
@@ -327,12 +420,15 @@ body {
 @media (max-width: 1240px) {
     .wrapper {
         margin-top: 20px;
+        -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     }
 }
 
 @media (max-width: 1240px) and (min-width: 1001px) {
     .candy {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
     }
 
