@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 5 version
+*/
+
 body {
     margin: 0;
     padding: 0;
@@ -58,18 +65,38 @@ body {
 }
 
 .scroll {
-    animation: 10s linear loop infinite;
+    -webkit-animation: 10s linear loop infinite;
+            animation: 10s linear loop infinite;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+}
+
+@-webkit-keyframes loop {
+    0% {
+        -webkit-transform: translateX(0%);
+                transform: translateX(0%);
+    }
+
+    100% {
+        -webkit-transform: translateX(-50%);
+                transform: translateX(-50%);
+    }
 }
 
 @keyframes loop {
     0% {
-        transform: translateX(0%);
+        -webkit-transform: translateX(0%);
+                transform: translateX(0%);
     }
 
     100% {
-        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+                transform: translateX(-50%);
     }
 }
 
@@ -210,8 +237,12 @@ body {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     text-align: center;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .candy {
