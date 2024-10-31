@@ -1,0 +1,48 @@
+.interview-tape {
+    position: absolute;
+    width: 120%;
+    left: -10%;
+    height: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.6) 0px 2px 30px;
+    background: repeating-linear-gradient(135deg, var(--color-accent), var(--color-accent) 30px, var(--color-outline) 30px, var(--color-outline) 60px);
+}
+
+.interview-tape:nth-of-type(1) {
+    top: 10%;
+    transform: rotate(5deg);
+}
+
+.interview-tape:nth-of-type(2) {
+    top: 70%;
+    transform: rotate(-14deg);
+}
+
+.interview-tape:nth-of-type(3) {
+    top: 50%;
+    transform: rotate(20deg);
+}
+
+#interview h1 {
+    font-family: "Unbounded", sans-serif;
+    position: absolute;
+    font-size: 2vw;
+    text-align: center;
+    top: 50%;
+    font-weight: 400;
+    text-shadow: black 0px 0px 7px, black 0px 0px 20px;
+    margin: 0;
+    transform: translateY(-50%);
+    width: 100%;
+}
+
+@media (max-aspect-ratio: 14/9) {
+    #interview h1 {
+        font-size: 2.5vw;
+    }
+}
+
+@media (max-aspect-ratio: 23/18) {
+    #interview h1 {
+        font-size: 5vw;
+    }
+}

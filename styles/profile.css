@@ -1,0 +1,14 @@
+#profile img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    scale: 1;
+    transition: 0.8s filter, 0.8s scale;
+    filter: grayscale(40%) opacity(0.85);
+}
+
+#profile img:hover {
+    scale: 0.95;
+    filter: grayscale(20%);
+}
