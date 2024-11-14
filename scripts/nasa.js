@@ -1,3 +1,3 @@
 document.getElementById('nasa').addEventListener('click', () => {
-    window.open('https://cynex0.github.io/space-apps-orrery/', '_blank');
+    window.open('https://github.com/cynex0/space-apps-orrery', '_blank');
 })
