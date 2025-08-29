@@ -1,118 +1,123 @@
 #social {
-    display: flex;
-    width: 100%;
-    padding: 0.5vmin;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-.social-container {
-    padding: 0.5vmin;
-    box-sizing: border-box;
-    border-radius: 1vmin;
-    transition: 0.5s padding;
-    height: 25%;
-    flex: 50%;
-}
-
-.social-container>.text {
-    cursor: pointer;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-    border-radius: 1vmin;
-    border: 1px solid var(--color-outline);
-    align-items: center;
-    height: 100%;
-    width: 100%;
+  display: grid;
+  padding: 2.2cqmax;
+  gap: 2.2cqmax;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 1fr);
 }
 
 .social-gradient-canvas {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    filter: grayscale(80%) blur(2px);
-    opacity: 0.3;
-    transition: 0.5s filter, 0.5s opacity;
-    --gradient-color-1: var(--color-accent);
-    --gradient-color-2: var(--color-secondary);
-    --gradient-color-3: var(--color-accent-complementary);
-    --gradient-color-4: var(--color-secondary-complementary);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  filter: grayscale(80%) blur(2px);
+  opacity: 0.3;
+  transition: 0.5s filter, 0.5s opacity;
+  --gradient-color-1: var(--color-accent);
+  --gradient-color-2: var(--color-secondary);
+  --gradient-color-3: var(--color-accent-complementary);
+  --gradient-color-4: var(--color-secondary-complementary);
 }
 
-.social-container h1 {
-    display: flex;
-    font-family: "Unbounded", sans-serif;
-    justify-content: space-between;
-    width: fit-content;
-    color: var(--color-on-background);
-    text-align: end;
-    font-size: 1.8vw;
-    transition: 0.5s font-variation-settings, 0.5s color;
-    font-variation-settings: "wght" 200;
-    margin: 0;
-    line-height: 90%;
-    box-sizing: border-box;
-    user-select: none;
+.social-link {
+  position: relative;
+  container-type: size;
+  box-sizing: border-box;
+  transition: 0.5s scale;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 0.9vw;
+  border: 1px solid var(--color-outline);
+  align-items: center;
+  height: 100%;
+  width: 100%;
 }
 
-.social-container:hover {
-    padding: 1vmin;
+.social-link p {
+  font-family: "Unbounded", sans-serif;
+  text-align: center;
+  width: fit-content;
+  color: var(--color-on-background);
+  font-size: 10cqw;
+  transition: 0.5s font-variation-settings;
+  font-variation-settings: "wght" 200;
+  line-height: 90%;
+  box-sizing: border-box;
+  user-select: none;
 }
 
-.social-container:hover .social-gradient-canvas {
-    opacity: 1;
-    filter: grayscale(0%);
+.social-link:hover {
+  scale: 0.92;
 }
 
-.social-container:hover h1 {
-    font-variation-settings: "wght" 500;
+.social-link:hover .social-gradient-canvas {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+.social-link:hover p {
+  font-variation-settings: "wght" 500;
+}
+
+.container:has(#social) {
+  grid-column-start: 10;
+  grid-column-end: 12;
+  grid-row-start: 1;
+  grid-row-end: 5;
 }
 
 @media (max-aspect-ratio: 14/9) {
-    .social-container {
-        height: 50%;
-    }
+  #social {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
 
-    .social-container h1 {
-        font-size: 2.5vw;
-    }
+  .social-link {
+    border-radius: 1.2vh;
+  }
+
+  .social-link p {
+    font-size: 9cqw;
+  }
+
+  .container:has(#social) {
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 8;
+    grid-row-end: 10;
+  }
+}
+
+@media (max-aspect-ratio: 11/9) {
+  .container:has(#social) {
+    grid-column-start: 3;
+    grid-column-end: 6;
+    grid-row-start: 10;
+    grid-row-end: 12;
+  }
+
+  .social-link p {
+    font-size: 13cqw;
+  }
 }
 
 @media (max-aspect-ratio: 7/9) {
-    .social-container h1 {
-        font-size: 4vw;
-    }
-
-    .social-container {
-        padding: 0.7vw;
-    }
-
-    .social-container:hover {
-        padding: 1.4vmin;
-    }
+  .container:has(#social) {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 10;
+    grid-row-end: 12;
+  }
 }
 
-@media (max-aspect-ratio: 2/3) {
-    #social {
-        padding: 1vw;
-    }
-
-    .social-container {
-        padding: 1vw;
-    }
-
-    .social-container:hover {
-        padding: 2vmin;
-    }
-
-    .social-container>.text {
-        border-radius: 2vw;
-    }
-
-    .social-container h1 {
-        font-size: 5vw;
-    }
+@media (max-aspect-ratio: 9/16) {
+  .container:has(#social) {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 8;
+    grid-row-end: 10;
+  }
 }

@@ -1,51 +1,55 @@
-const baseTransition = '1s opacity, 1s scale'
-
 function registerHoverListeners(containers) {
-    for (let i = 0; i < containers.length; i++) {
-        let container = containers.item(i);
+  for (let i = 0; i < containers.length; i++) {
+    let container = containers[i];
+    const target = container.children[0];
 
-        container.style["transition"] = baseTransition;
-        container.style["opacity"] = 0;
-        container.style["scale"] = 0.9;
+    // hacky way of making sure there are no pixel gaps on recalculate
+    target.style["transform"] = "rotateX(0.001deg) rotateY(0.001deg)";
+    target.style["transition"] = "1s transform, 0.5s opacity";
 
-        // hacky way of making sure there are no pixel gaps on recalculate
-        container.style["transform"] = "rotateX(0.001deg) rotateY(0.001deg)";
+    container.style.setProperty("--overlay-opacity", "0");
+    container.style.setProperty("--overlay-rotation", "0deg");
 
-        setTimeout(() => {
-            container.style["transition"] = baseTransition + ", 1s transform";
-            container.style["opacity"] = 1;
-            container.style["scale"] = 1;
+    container.addEventListener("pointermove", (event) => {
+      if (event.pointerType !== "mouse") {
+        container.style.setProperty("--overlay-opacity", "0");
+        container.style.setProperty("--overlay-rotation", "0deg");
 
-            container.addEventListener("mousemove",
-                (event) => {
-                    if (matchMedia('(hover: hover)').matches) {
-                        let width = container.clientWidth;
-                        let height = container.clientHeight;
+        return;
+      }
 
-                        const rect = container.getBoundingClientRect();
-                        let x = event.clientX - rect.left;
-                        let y = event.clientY - rect.top;
+      const width = container.clientWidth;
+      const height = container.clientHeight;
 
-                        let valueX = (x - width / 2) / width * 4;
-                        let valueY = (y - height / 2) / height * 4;
+      const rect = container.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
 
-                        container.style["transition"] = baseTransition + ", 0.1s transform";
-                        container.style["transform"] =
-                            `rotateX(${-valueY}deg) rotateY(${valueX}deg)`;
-                    }
-                }
-            );
+      const factorY = ((x - width / 2) / width) * 2;
+      const factorX = ((y - height / 2) / height) * 2;
 
-            container.addEventListener("mouseout",
-                () => {
-                    if (matchMedia('(hover: hover)').matches) {
-                        container.style["transition"] = baseTransition + ", 1s transform";
-                        container.style["transform"] = "rotateX(0.001deg) rotateY(0.001deg)";
-                    }
-                }
-            );
-        }, 500 + Math.random() * 100);
-    }
+      const valueY = factorY * 5;
+      const valueX = factorX * 5;
+
+      target.style["transition"] = "0.1s transform, 0.5s opacity";
+      target.style[
+        "transform"
+      ] = `rotateX(${-valueX}deg) rotateY(${valueY}deg)`;
+
+      const angle = (-Math.atan2(factorY, factorX) * 180) / Math.PI;
+
+      container.style.setProperty(
+        "--overlay-opacity",
+        `${Math.max(Math.abs(factorX), Math.abs(factorY))}`
+      );
+      container.style.setProperty("--overlay-rotation", `${angle}deg`);
+    });
+
+    container.addEventListener("mouseout", () => {
+      target.style["transition"] = "1s transform, 0.5s opacity";
+      target.style["transform"] = "rotateX(0.001deg) rotateY(0.001deg)";
+    });
+  }
 }
 
 export { registerHoverListeners };

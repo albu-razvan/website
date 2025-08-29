@@ -1,16 +1,43 @@
 #profile img {
-    position: absolute;
-    width: 110%;
-    height: 110%;
-    margin-left: -5%;
-    margin-top: -5%;
-    object-fit: cover;
-    scale: 1;
-    transition: 0.8s filter, 0.8s scale;
-    filter: grayscale(40%) opacity(0.85);
+  position: absolute;
+  width: 110%;
+  height: 110%;
+  margin-left: -5%;
+  margin-top: -5%;
+  object-fit: cover;
+  scale: 1;
+  transition: 0.8s filter, 0.8s scale;
+  filter: grayscale(40%) opacity(0.85);
 }
 
-#profile img:hover {
-    scale: 0.95;
-    filter: grayscale(20%);
+#profile:hover > img {
+  scale: 0.95;
+  filter: grayscale(20%);
+}
+
+.container:has(#profile) {
+  grid-column-start: 3;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+@media (max-aspect-ratio: 11/9) {
+  .container:has(#profile) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 6;
+  }
+}
+
+@media (max-aspect-ratio: 1) {
+  /** do not retrigger the animation */
+  .container:has(#profile) {
+    overflow: hidden !important;
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+    size: 0;
+  }
 }

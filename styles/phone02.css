@@ -1,15 +1,42 @@
-#phone02 img {
-    position: absolute;
-    left: -2%;
-    width: 104%;
-    top: -2%;
-    height: 104%;
-    object-fit: cover;
-    filter: grayscale(80%);
-    transition: 0.7s filter, 0.7s scale, 0.7s rotate;
+.container:has(#phone02) {
+  grid-column-start: 7;
+  grid-column-end: 10;
+  grid-row-start: 6;
+  grid-row-end: 8;
 }
 
-#phone02 img:hover {
-    scale: 0.97;
-    filter: grayscale(0%);
+#phone02 img {
+  position: absolute;
+  left: -2%;
+  width: 104%;
+  top: -2%;
+  height: 104%;
+  object-fit: cover;
+  filter: grayscale(80%);
+  transition: 0.7s filter, 0.7s scale, 0.7s rotate;
+}
+
+#phone02:hover img {
+  scale: 0.97;
+  filter: grayscale(0%);
+}
+
+@media (max-aspect-ratio: 11/9) {
+  .container:has(#phone02) {
+    grid-column-start: 5;
+    grid-column-end: 8;
+    grid-row-start: 6;
+    grid-row-end: 8;
+  }
+}
+
+@media (max-aspect-ratio: 1) {
+  /** do not retrigger the animation */
+  .container:has(#phone02) {
+    overflow: hidden !important;
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+    size: 0;
+  }
 }

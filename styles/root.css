@@ -9,7 +9,9 @@
     --color-secondary-complementary: #3B0826;
     --color-container: #080808;
     --color-outline: #1d1c1c;
-    --perspective: 70vmax;
+
+    --animation-delay: 200ms;
+    --perspective: 40vmax;
 }
 
 .pointer-cursor {

@@ -56,7 +56,6 @@
 
     <link rel="preload" href="/styles/info.css" as="style" />
     <link rel="preload" href="/styles/interview.css" as="style" />
-    <link rel="preload" href="/styles/landing.css" as="style" />
     <link rel="preload" href="/styles/nasa.css" as="style" />
     <link rel="preload" href="/styles/phone01.css" as="style" />
     <link rel="preload" href="/styles/phone02.css" as="style" />
@@ -67,23 +66,258 @@
     <link rel="preload" href="/styles/stario-stats.css" as="style" />
     <link rel="preload" href="/styles/stario.css" as="style" />
     <link rel="preload" href="/styles/university.css" as="style" />
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script type="module" src="/scripts/index.js"></script>
   </head>
 
-  <body class="cell">
-    <div id="landing"></div>
-    <div id="content"></div>
+  <body>
+    <div id="content">
+      <div class="container" style="--animation-delay: 380ms">
+        <div id="university">
+          <link rel="stylesheet" href="./styles/university.css" />
 
-    <script>
-      $(function () {
-        $("#landing").load("/stubs/landing.html", () => {
-          $("#content").load("/stubs/content.html", () => {
-            $(document).ready(prepare);
-          });
-        });
-      });
-    </script>
+          <div class="university-content">
+            <p>
+              2<sup>nd</sup> year student and teaching assistant for 1<sup
+                >st</sup
+              >
+              year students in
+            </p>
+            <p><span>Software Engineering and Management BSc</span></p>
+            <div id="university-name">
+              <p>at</p>
+              <p><span>University of Gothenburg</span></p>
+            </div>
+          </div>
+
+          <img src="./images/gu.svg" />
+        </div>
+      </div>
+
+      <div class="container pointer-cursor" style="--animation-delay: 360ms">
+        <div id="spotify">
+          <link rel="stylesheet" href="./styles/spotify.css" />
+
+          <div id="spotify-album-container" style="display: none">
+            <img class="spotify-album" id="spotify-album1" />
+            <img class="spotify-album" id="spotify-album2" />
+          </div>
+
+          <div id="spotify-info">
+            <img src="./images/spotify.svg" />
+
+            <div id="spotify-text">
+              <p id="spotify-status"></p>
+
+              <h1 id="spotify-name"></h1>
+              <h2 id="spotify-artists"></h2>
+
+              <h1 id="spotify-placeholder">No data</h1>
+            </div>
+          </div>
+
+          <script type="module" src="./scripts/spotify.js"></script>
+        </div>
+      </div>
+
+      <div class="container" style="--animation-delay: 340ms">
+        <div id="interview">
+          <link rel="stylesheet" href="./styles/interview.css" />
+
+          <img class="interview-preview" src="./images/interview.webp" />
+
+          Check out the interview over at<br />
+          <span class="interview-link">
+            <span style="font-weight: 900">An</span
+            ><span style="font-weight: 800">dr</span
+            ><span style="font-weight: 700">oi</span
+            ><span style="font-weight: 600">d</span
+            ><span style="font-weight: 500">Po</span
+            ><span style="font-weight: 400">li</span
+            ><span style="font-weight: 300">ce</span>
+            <img src="./images/link-arrow.svg" />
+          </span>
+
+          <script type="module" src="./scripts/interview.js"></script>
+        </div>
+      </div>
+
+      <div class="container" style="--animation-delay: 240ms">
+        <div id="profile">
+          <link rel="stylesheet" href="./styles/profile.css" />
+
+          <img src="./images/profile.webp" />
+        </div>
+      </div>
+
+      <div class="container pointer-cursor" style="--animation-delay: 260ms">
+        <div id="nasa">
+          <link rel="stylesheet" href="/styles/nasa.css" />
+
+          <img id="nasa-orrery" src="./images/orrery.webp" />
+
+          <div id="nasa-info">
+            <p id="nasa-text">48h Challange</p>
+            <img id="nasa-challange" src="./images/nasa-challange.webp" />
+          </div>
+
+          <script src="./scripts/nasa.js"></script>
+        </div>
+      </div>
+
+      <div class="container" style="--animation-delay: 260ms">
+        <div id="info">
+          <link rel="stylesheet" href="./styles/info.css" />
+
+          <img
+            id="lindholmen"
+            src="./images/lindholmen.webp"
+            onclick="window.open('https://maps.app.goo.gl/KE5iNV8Qx26TULws9', '_blank')"
+          />
+
+          <p id="location">
+            <img src="./images/pin.svg" />Lindholmen, Gothenburg
+          </p>
+        </div>
+      </div>
+
+      <div class="container">
+        <div id="stario">
+          <link rel="stylesheet" href="./styles/stario.css" />
+
+          <canvas id="stario-gradient-canvas" data-transition-in></canvas>
+
+          <img src="./images/stario.svg" />
+
+          <p>Stario</p>
+          <div id="stario-links">
+            <img
+              class="pointer-cursor"
+              src="./images/github.svg"
+              onclick="window.open('https://github.com/albu-razvan/Stario', '_blank');"
+            />
+            <img
+              class="pointer-cursor"
+              src="./images/discord.svg"
+              onclick="window.open('https://discord.gg/WuVapMt9gY', '_blank');"
+            />
+          </div>
+
+          <script src="./scripts/stario.js" type="module"></script>
+        </div>
+      </div>
+
+      <div class="container" style="--animation-delay: 320ms">
+        <div id="qr">
+          <link rel="stylesheet" href="./styles/qr.css" />
+
+          <canvas id="qr-gradient-canvas" data-transition-in></canvas>
+          <img src="./images/qr.webp" />
+
+          <script src="./scripts/qr.js" type="module"></script>
+        </div>
+      </div>
+
+      <div class="container" style="--animation-delay: 280ms">
+        <div id="stario-stats">
+          <link rel="stylesheet" href="./styles/stario-stats.css" />
+
+          <div class="spacer"></div>
+
+          <div class="section">
+            <h2>350K+</h2>
+            <p>Downloads</p>
+          </div>
+
+          <div class="section">
+            <h2>15K+</h2>
+            <p>Active users</p>
+          </div>
+
+          <div class="section">
+            <h2>1000+</h2>
+            <p>5 star reviews</p>
+          </div>
+
+          <div class="spacer"></div>
+        </div>
+      </div>
+
+      <div class="container" style="--animation-delay: 320ms">
+        <div id="phone01">
+          <link rel="stylesheet" href="./styles/phone01.css" />
+
+          <img src="./images/phone01.webp" />
+        </div>
+      </div>
+
+      <div class="container" style="--animation-delay: 340ms">
+        <div id="social">
+          <link rel="stylesheet" href="/styles/social.css" />
+
+          <div
+            class="social-link"
+            onclick="window.open('https://www.linkedin.com/in/razvan-albu-ro/', '_blank')"
+          >
+            <canvas
+              class="social-gradient-canvas"
+              id="social-gradient-canvas-linkedin"
+              data-transition-in
+            ></canvas>
+            <p>Linkedin</p>
+          </div>
+
+          <div
+            class="social-link"
+            onclick="window.open('mailto:contact@razvanalbu.com', '_blank')"
+          >
+            <canvas
+              class="social-gradient-canvas"
+              id="social-gradient-canvas-mail"
+              data-transition-in
+            ></canvas>
+            <p>E-mail</p>
+          </div>
+
+          <div
+            class="social-link"
+            onclick="window.open('https://x.com/razvan_albu_', '_blank')"
+          >
+            <canvas
+              class="social-gradient-canvas"
+              id="social-gradient-canvas-x"
+              data-transition-in
+            ></canvas>
+            <p>X (Twitter)</p>
+          </div>
+
+          <div
+            class="social-link"
+            class="text"
+            onclick="window.open('https://github.com/albu-razvan', '_blank')"
+          >
+            <canvas
+              class="social-gradient-canvas"
+              id="social-gradient-canvas-telegram"
+              data-transition-in
+            ></canvas>
+            <p>GitHub</p>
+          </div>
+
+          <script src="./scripts/social.js" type="module"></script>
+        </div>
+      </div>
+
+      <div class="container" style="--animation-delay: 300ms">
+        <div id="phone02">
+          <link rel="stylesheet" href="./styles/phone02.css" />
+
+          <img src="./images/phone02.webp" />
+        </div>
+      </div>
+    </div>
+    <div id="warning">
+      <h1>Please use a wider window aspect ratio to view this content.</h1>
+    </div>
   </body>
+
+  <script type="module" src="./scripts/index.js"></script>
 </html>
