@@ -1,0 +1,100 @@
+#opera {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  overflow: hidden;
+  text-align: center;
+  padding: 10%;
+}
+
+#opera .logo {
+  position: relative;
+  flex: 1;
+  max-height: 80cqw;
+  width: 100%;
+}
+
+#opera img {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.opera-content {
+  display: flex;
+  gap: 4cqw;
+  padding: 10%;
+  flex-direction: column;
+}
+
+#opera p {
+  text-align: center;
+  margin: 0px;
+  font-size: 6cqw;
+}
+
+#opera p > span {
+  color: var(--color-accent);
+}
+
+#opera .visible-on-phone {
+  display: none;
+}
+
+.container:has(#opera) {
+  grid-column-start: 3;
+  grid-column-end: 5;
+  grid-row-start: 3;
+  grid-row-end: 6;
+}
+
+@media (max-aspect-ratio: 11/9) {
+  .container:has(#opera) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 8;
+    grid-row-end: 12;
+  }
+
+  #opera .visible-on-desktop {
+    display: none;
+  }
+
+  #opera .visible-on-phone {
+    display: flex;
+  }
+}
+
+@media (max-aspect-ratio: 1) {
+  #opera {
+    gap: 10cqw;
+  }
+
+  #opera p {
+    font-size: 6.5cqw;
+  }
+}
+
+@media (max-aspect-ratio: 7/9) {
+  .container:has(#opera) {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 8;
+    grid-row-end: 12;
+  }
+}
+
+@media (max-aspect-ratio: 9/16) {
+  /** do not retrigger the animation */
+  .container:has(#opera) {
+    overflow: hidden !important;
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+    size: 0;
+  }
+}

@@ -36,10 +36,6 @@
   color: var(--color-accent);
 }
 
-#university #university-name {
-  display: none;
-}
-
 .container:has(#university) {
   grid-column-start: 1;
   grid-column-end: 3;

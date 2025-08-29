@@ -56,7 +56,7 @@
 
     <link rel="preload" href="/styles/info.css" as="style" />
     <link rel="preload" href="/styles/interview.css" as="style" />
-    <link rel="preload" href="/styles/nasa.css" as="style" />
+    <link rel="preload" href="/styles/opera.css" as="style" />
     <link rel="preload" href="/styles/phone01.css" as="style" />
     <link rel="preload" href="/styles/phone02.css" as="style" />
     <link rel="preload" href="/styles/profile.css" as="style" />
@@ -76,19 +76,13 @@
 
           <div class="university-content">
             <p>
-              2<sup>nd</sup> year student and teaching assistant for 1<sup
-                >st</sup
-              >
-              year students in
+              3<sup>rd</sup> year student and teaching assistant for
+              earlier-year peers
             </p>
             <p><span>Software Engineering and Management BSc</span></p>
-            <div id="university-name">
-              <p>at</p>
-              <p><span>University of Gothenburg</span></p>
-            </div>
           </div>
 
-          <img src="./images/gu.svg" />
+          <img src="./public/images/gu.svg" />
         </div>
       </div>
 
@@ -102,7 +96,7 @@
           </div>
 
           <div id="spotify-info">
-            <img src="./images/spotify.svg" />
+            <img src="./public/images/spotify.svg" />
 
             <div id="spotify-text">
               <p id="spotify-status"></p>
@@ -122,7 +116,7 @@
         <div id="interview">
           <link rel="stylesheet" href="./styles/interview.css" />
 
-          <img class="interview-preview" src="./images/interview.webp" />
+          <img class="interview-preview" src="./public/images/interview.webp" />
 
           Check out the interview over at<br />
           <span class="interview-link">
@@ -133,7 +127,7 @@
             ><span style="font-weight: 500">Po</span
             ><span style="font-weight: 400">li</span
             ><span style="font-weight: 300">ce</span>
-            <img src="./images/link-arrow.svg" />
+            <img src="./public/images/link-arrow.svg" />
           </span>
 
           <script type="module" src="./scripts/interview.js"></script>
@@ -144,22 +138,39 @@
         <div id="profile">
           <link rel="stylesheet" href="./styles/profile.css" />
 
-          <img src="./images/profile.webp" />
+          <img src="./public/images/profile.webp" />
         </div>
       </div>
 
       <div class="container pointer-cursor" style="--animation-delay: 260ms">
-        <div id="nasa">
-          <link rel="stylesheet" href="/styles/nasa.css" />
+        <div
+          id="opera"
+          onclick="window.open('./public/cv-razvan-albu-august-2025.pdf', '_blank')"
+        >
+          <link rel="stylesheet" href="./styles/opera.css" />
 
-          <img id="nasa-orrery" src="./images/orrery.webp" />
-
-          <div id="nasa-info">
-            <p id="nasa-text">48h Challange</p>
-            <img id="nasa-challange" src="./images/nasa-challange.webp" />
+          <div class="opera-content visible-on-phone">
+            <p>Read about my experience as a</p>
+            <p>
+              <span> Gaming Frontend<br />Summer Intern</span>
+            </p>
+            <p>as part of</p>
+            <p><span>Opera Software</span></p>
           </div>
 
-          <script src="./scripts/nasa.js"></script>
+          <div class="opera-content visible-on-desktop">
+            <p>Read about my experience as a</p>
+            <p>
+              <span
+                >2025 Opera Software<br />Gaming Frontend<br />Summer
+                Intern</span
+              >
+            </p>
+          </div>
+
+          <div class="logo">
+            <img src="./public/images/opera.webp" />
+          </div>
         </div>
       </div>
 
@@ -169,12 +180,12 @@
 
           <img
             id="lindholmen"
-            src="./images/lindholmen.webp"
+            src="./public/images/lindholmen.webp"
             onclick="window.open('https://maps.app.goo.gl/KE5iNV8Qx26TULws9', '_blank')"
           />
 
           <p id="location">
-            <img src="./images/pin.svg" />Lindholmen, Gothenburg
+            <img src="./public/images/pin.svg" />Lindholmen, Gothenburg
           </p>
         </div>
       </div>
@@ -185,18 +196,18 @@
 
           <canvas id="stario-gradient-canvas" data-transition-in></canvas>
 
-          <img src="./images/stario.svg" />
+          <img src="./public/images/stario.svg" />
 
           <p>Stario</p>
           <div id="stario-links">
             <img
               class="pointer-cursor"
-              src="./images/github.svg"
+              src="./public/images/github.svg"
               onclick="window.open('https://github.com/albu-razvan/Stario', '_blank');"
             />
             <img
               class="pointer-cursor"
-              src="./images/discord.svg"
+              src="./public/images/discord.svg"
               onclick="window.open('https://discord.gg/WuVapMt9gY', '_blank');"
             />
           </div>
@@ -210,7 +221,7 @@
           <link rel="stylesheet" href="./styles/qr.css" />
 
           <canvas id="qr-gradient-canvas" data-transition-in></canvas>
-          <img src="./images/qr.webp" />
+          <img src="./public/images/qr.webp" />
 
           <script src="./scripts/qr.js" type="module"></script>
         </div>
@@ -223,12 +234,12 @@
           <div class="spacer"></div>
 
           <div class="section">
-            <h2>350K+</h2>
+            <h2>500K+</h2>
             <p>Downloads</p>
           </div>
 
           <div class="section">
-            <h2>15K+</h2>
+            <h2>20K+</h2>
             <p>Active users</p>
           </div>
 
@@ -245,7 +256,7 @@
         <div id="phone01">
           <link rel="stylesheet" href="./styles/phone01.css" />
 
-          <img src="./images/phone01.webp" />
+          <img src="./public/images/phone01.webp" />
         </div>
       </div>
 
@@ -253,54 +264,58 @@
         <div id="social">
           <link rel="stylesheet" href="/styles/social.css" />
 
-          <div
+          <a
             class="social-link"
-            onclick="window.open('https://www.linkedin.com/in/razvan-albu-ro/', '_blank')"
-          >
-            <canvas
-              class="social-gradient-canvas"
-              id="social-gradient-canvas-linkedin"
-              data-transition-in
-            ></canvas>
-            <p>Linkedin</p>
-          </div>
-
-          <div
-            class="social-link"
-            onclick="window.open('mailto:contact@razvanalbu.com', '_blank')"
-          >
-            <canvas
-              class="social-gradient-canvas"
-              id="social-gradient-canvas-mail"
-              data-transition-in
-            ></canvas>
-            <p>E-mail</p>
-          </div>
-
-          <div
-            class="social-link"
-            onclick="window.open('https://x.com/razvan_albu_', '_blank')"
+            target="_blank"
+            download
+            href="./public/cv-razvan-albu-august-2025.pdf"
           >
             <canvas
               class="social-gradient-canvas"
               id="social-gradient-canvas-x"
               data-transition-in
             ></canvas>
-            <p>X (Twitter)</p>
-          </div>
+            <span>My CV</span>
+          </a>
 
-          <div
+          <a
             class="social-link"
-            class="text"
-            onclick="window.open('https://github.com/albu-razvan', '_blank')"
+            href="https://www.linkedin.com/in/razvan-albu-ro/"
+            target="_blank"
+          >
+            <canvas
+              class="social-gradient-canvas"
+              id="social-gradient-canvas-linkedin"
+              data-transition-in
+            ></canvas>
+            <span>LinkedIn</span>
+          </a>
+
+          <a
+            class="social-link"
+            href="https://github.com/albu-razvan"
+            target="_blank"
           >
             <canvas
               class="social-gradient-canvas"
               id="social-gradient-canvas-telegram"
               data-transition-in
             ></canvas>
-            <p>GitHub</p>
-          </div>
+            <span>GitHub</span>
+          </a>
+
+          <a
+            class="social-link"
+            href="mailto:contact@razvanalbu.com"
+            target="_blank"
+          >
+            <canvas
+              class="social-gradient-canvas"
+              id="social-gradient-canvas-mail"
+              data-transition-in
+            ></canvas>
+            <span>Email</span>
+          </a>
 
           <script src="./scripts/social.js" type="module"></script>
         </div>
@@ -310,7 +325,7 @@
         <div id="phone02">
           <link rel="stylesheet" href="./styles/phone02.css" />
 
-          <img src="./images/phone02.webp" />
+          <img src="./public/images/phone02.webp" />
         </div>
       </div>
     </div>

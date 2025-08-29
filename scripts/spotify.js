@@ -18,7 +18,7 @@ registerFetchInterval((data) => {
     if (data) {
         if (data.playing != undefined) {
             if (data.playing) {
-                sessionStatus.innerHTML = "PLAYING";
+                sessionStatus.innerHTML = "NOW PLAYING";
             } else {
                 sessionStatus.innerHTML = "PAUSED";
             }

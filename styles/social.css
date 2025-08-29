@@ -34,9 +34,10 @@
   align-items: center;
   height: 100%;
   width: 100%;
+  text-decoration: none !important;
 }
 
-.social-link p {
+.social-link span {
   font-family: "Unbounded", sans-serif;
   text-align: center;
   width: fit-content;
@@ -58,7 +59,7 @@
   filter: grayscale(0%);
 }
 
-.social-link:hover p {
+.social-link:hover span {
   font-variation-settings: "wght" 500;
 }
 
@@ -79,7 +80,7 @@
     border-radius: 1.2vh;
   }
 
-  .social-link p {
+  .social-link span {
     font-size: 9cqw;
   }
 
@@ -99,7 +100,7 @@
     grid-row-end: 12;
   }
 
-  .social-link p {
+  .social-link span {
     font-size: 13cqw;
   }
 }
